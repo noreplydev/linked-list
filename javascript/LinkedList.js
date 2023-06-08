@@ -22,8 +22,17 @@ export class LinkedList {
   }
 
   insertAt(node, pos) {
+    if (pos === 0) {
+      this.prepend(node)
+      return
+    }
+
     let currNode = this.head 
 
+    if (this.head === null) {
+      throw new Error('The list is empty')
+    }
+    
     for(let i = 0; i < pos && currNode; i++) {
       currNode = currNode.next
     }
@@ -35,4 +44,28 @@ export class LinkedList {
     node.next = currNode.next 
     currNode.next = node
   }
+
+  // Deletion methods
+  delete(pos) {
+    if (this.head === null) {
+      throw new Error('The list is empty')
+    }
+
+    if (pos = 0) {
+      this.head = this.head.next
+      return 
+    } 
+
+    let currNode = this.head
+
+    for(let i = 0; i < pos; i++) {
+      currNode = currNode.next
+    }
+
+    currNode.next = currNode.next.next
+  }
+
+  // 
+
+
 }
