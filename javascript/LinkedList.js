@@ -58,8 +58,12 @@ export class LinkedList {
 
     let currNode = this.head
 
-    for(let i = 0; i < pos; i++) {
+    for(let i = 0; i < pos && currNode; i++) {
       currNode = currNode.next
+    }
+
+    if (currNode === null) {
+      throw new Error('Node index out of bounds')
     }
 
     currNode.next = currNode.next.next
