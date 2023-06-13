@@ -69,7 +69,18 @@ export class LinkedList {
     currNode.next = currNode.next.next
   }
 
-  // 
+  // Traverse operations
+  traverse() {
+    let currNode = this.head
+
+    while(currNone.next !== null) {
+      // Do anything you want here and set 
+      // the next node
+
+      console.log(currNode.value)
+      currNode = currNode.next
+    }
+  }
 
 
 }
