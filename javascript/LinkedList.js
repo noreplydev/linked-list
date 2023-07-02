@@ -46,7 +46,7 @@ export class LinkedList {
   }
 
   // Deletion methods
-  delete(pos) {
+  deleteNode(pos) {
     if (this.head === null) {
       throw new Error('The list is empty')
     }
@@ -82,5 +82,40 @@ export class LinkedList {
     }
   }
 
+  traverseBackwards() {
+    let currNode = this.head
+    const nodes = []
 
+    while(currNode.next !== null) {
+      nodes.push(currNode)
+      currNode = currNode.next
+    }
+
+    nodes = nodes.reverse()
+
+    nodes.forEach(node => {
+      // Do anything you want here
+      // We're just printing the value
+      console.log(node.value)
+    })
+  }
+  
+  // Update operation
+  updateNode(pos, newValue) {
+    if (!this.head) {
+      throw new Error("The list is empty")
+    }
+
+    let currNode = this.head
+
+    for(let i = 0; i < index && currNode; i++) {
+      currNode = currNode.next
+    }
+
+    if (!currNode) {
+      throw new Error("Node position out of bounds")
+    }
+
+    currNode.value = newValue
+  }
 }
