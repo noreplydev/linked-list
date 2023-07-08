@@ -1,6 +1,6 @@
 // ./LinkedList.js
 
-export class LinkedList {
+export default class LinkedList {
   constructor() {
     this.head = null
   }
