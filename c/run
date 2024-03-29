@@ -1,0 +1,2 @@
+gcc -o bin/build src/main.c
+./bin/build
